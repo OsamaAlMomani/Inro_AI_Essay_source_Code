@@ -1,0 +1,60 @@
+{
+  "n_rows": 34788,
+  "n_features": 27,
+  "feature_list": [
+    "LIMIT_BAL",
+    "SEX",
+    "EDUCATION",
+    "MARRIAGE",
+    "AGE",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6",
+    "BILL_AMT_SUM",
+    "LIMIT_BAL_LOG",
+    "CITY_FREQ",
+    "RISK_RATING"
+  ],
+  "class_balance": {
+    "0": 0.8087,
+    "1": 0.1913
+  },
+  "city_unique_values": 50,
+  "cleaning_report": {
+    "risk_leak_corrupted_strings_found": 3387,
+    "risk_leak_unrecoverable_set_to_nan": 31,
+    "bill_amt_sum_mismatches_fixed": 333,
+    "limit_bal_log_recomputed_rows": 33079,
+    "missing_before": {
+      "LIMIT_BAL": 1709,
+      "SEX": 1767,
+      "EDUCATION": 1734,
+      "MARRIAGE": 1733,
+      "AGE": 1755,
+      "PAY_AMT1": 1725,
+      "PAY_AMT2": 1744,
+      "risk_leak": 31,
+      "LIMIT_BAL_LOG": 34788
+    },
+    "missing_after": 0,
+    "final_shape": [
+      34788,
+      30
+    ]
+  }
+}

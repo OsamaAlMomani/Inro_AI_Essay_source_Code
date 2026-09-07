@@ -1,0 +1,8 @@
+{
+  "Logistic Regression": 0.05,
+  "Support Vector Machine": 4.38,
+  "Decision Tree": 0.82,
+  "Random Forest": 9.09,
+  "K-Nearest Neighbors": 0.01,
+  "XGBoost": 0.5
+}

@@ -1,0 +1,8 @@
+{
+  "best_model": "Random Forest",
+  "best_params": {
+    "max_depth": null,
+    "min_samples_split": 5,
+    "n_estimators": 100
+  }
+}
