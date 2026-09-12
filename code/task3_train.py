@@ -9,6 +9,7 @@ import json
 import time
 import joblib
 import numpy as np
+from pathlib import Path
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
@@ -18,13 +19,16 @@ from sklearn.neighbors import KNeighborsClassifier
 from xgboost import XGBClassifier
 
 from task2_prepare import prepare_features
+from data_prep import ensure_output_dirs, OUTPUTS_DIR, MODELS_DIR
 
-OUT_DIR = "../outputs"
-MODEL_DIR = "../outputs/models"
+BASE_DIR = Path(__file__).resolve().parent
+OUT_DIR = str(OUTPUTS_DIR)
+MODEL_DIR = str(MODELS_DIR)
 RANDOM_STATE = 42
 
-import os
-os.makedirs(MODEL_DIR, exist_ok=True)
+# Create outputs/ and outputs/models/ (and every other project output
+# folder) if they don't exist yet, so this runs on a fresh checkout too.
+ensure_output_dirs()
 
 
 def build_models():
@@ -34,9 +38,9 @@ def build_models():
         "Decision Tree": DecisionTreeClassifier(random_state=RANDOM_STATE),
         "Random Forest": RandomForestClassifier(random_state=RANDOM_STATE),
         "K-Nearest Neighbors": KNeighborsClassifier(),
-        "XGBoost": XGBClassifier(
-            random_state=RANDOM_STATE, eval_metric="logloss", use_label_encoder=False
-        ),
+        # use_label_encoder was removed in modern XGBoost (it's a no-op that
+        # only emits a warning now that the target is already 0/1-encoded).
+        "XGBoost": XGBClassifier(random_state=RANDOM_STATE, eval_metric="logloss"),
     }
 
 

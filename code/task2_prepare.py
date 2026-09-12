@@ -8,11 +8,17 @@ import json
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+from pathlib import Path
 
-from data_prep import load_raw, clean_dataset
+from data_prep import load_raw, clean_dataset, ensure_output_dirs, OUTPUTS_DIR
 
-OUT_DIR = "../outputs"
+BASE_DIR = Path(__file__).resolve().parent
+OUT_DIR = str(OUTPUTS_DIR)
 TARGET = "default.payment.next.month"
+
+# Create outputs/ (and every other project output folder) if it doesn't
+# exist yet, so this runs standalone on a fresh checkout too.
+ensure_output_dirs()
 
 
 def prepare_features(include_leak_feature: bool = False):

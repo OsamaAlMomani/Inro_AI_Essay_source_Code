@@ -1,0 +1,77 @@
+{
+  "target_counts": {
+    "0": 28132,
+    "1": 6656
+  },
+  "target_pct": {
+    "0": 80.87,
+    "1": 19.13
+  },
+  "descriptive_stats": {
+    "LIMIT_BAL": {
+      "mean": 182474.58,
+      "median": 140000.0,
+      "std": 230266.05,
+      "min": 10000.0,
+      "max": 5600000.0
+    },
+    "AGE": {
+      "mean": 35.44,
+      "median": 34.0,
+      "std": 9.01,
+      "min": 21.0,
+      "max": 79.0
+    },
+    "BILL_AMT_SUM": {
+      "mean": 270324.52,
+      "median": 127192.5,
+      "std": 379137.33,
+      "min": -336259.0,
+      "max": 5263883.0
+    },
+    "LIMIT_BAL_LOG": {
+      "mean": 11.71,
+      "median": 11.85,
+      "std": 0.94,
+      "min": 9.21,
+      "max": 15.54
+    },
+    "risk_leak": {
+      "mean": 0.19,
+      "median": 0.03,
+      "std": 0.41,
+      "min": -0.39,
+      "max": 1.4
+    }
+  },
+  "target_correlations": {
+    "risk_leak": 0.969,
+    "RISK_RATING": 0.362,
+    "PAY_0": 0.314,
+    "PAY_2": 0.254,
+    "PAY_3": 0.225,
+    "PAY_4": 0.208,
+    "PAY_5": 0.196,
+    "PAY_6": 0.179,
+    "LIMIT_BAL_LOG": -0.157,
+    "LIMIT_BAL": -0.087,
+    "PAY_AMT1": -0.067,
+    "PAY_AMT3": -0.053,
+    "PAY_AMT4": -0.053,
+    "PAY_AMT5": -0.052,
+    "PAY_AMT2": -0.05,
+    "PAY_AMT6": -0.049,
+    "SEX": -0.036,
+    "EDUCATION": 0.033,
+    "MARRIAGE": -0.026,
+    "BILL_AMT1": -0.019,
+    "BILL_AMT2": -0.014,
+    "BILL_AMT3": -0.014,
+    "ID": -0.013,
+    "BILL_AMT_SUM": -0.013,
+    "AGE": 0.011,
+    "BILL_AMT4": -0.01,
+    "BILL_AMT5": -0.007,
+    "BILL_AMT6": -0.006
+  }
+}

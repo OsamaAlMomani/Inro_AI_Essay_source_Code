@@ -10,6 +10,7 @@ import joblib
 import numpy as np
 import pandas as pd
 import matplotlib
+from pathlib import Path
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -19,15 +20,31 @@ from sklearn.metrics import (
 )
 from sklearn.model_selection import GridSearchCV
 
-FIG_DIR = "../figures"
-OUT_DIR = "../outputs"
-MODEL_DIR = "../outputs/models"
+from data_prep import ensure_output_dirs, FIGURES_DIR, OUTPUTS_DIR, MODELS_DIR
+
+BASE_DIR = Path(__file__).resolve().parent
+FIG_DIR = str(FIGURES_DIR)
+OUT_DIR = str(OUTPUTS_DIR)
+MODEL_DIR = str(MODELS_DIR)
+
+# Create figures/, outputs/, and outputs/models/ if they don't exist yet.
+# outputs/models/ should already exist from task3_train.py (that's where
+# the trained models this script loads come from), but this makes the
+# script robust even if run in isolation on a fresh checkout.
+ensure_output_dirs()
 
 sns.set_style("whitegrid")
 
 
 def load_everything():
-    splits = joblib.load(f"{MODEL_DIR}/splits.joblib")
+    splits_path = Path(MODEL_DIR) / "splits.joblib"
+    if not splits_path.exists():
+        raise FileNotFoundError(
+            f"Could not find {splits_path}. Run task3_train.py first - it "
+            "trains the models and saves the train/test splits that this "
+            "script (task4_evaluate.py) loads."
+        )
+    splits = joblib.load(splits_path)
     model_names = [
         "Logistic Regression", "Support Vector Machine", "Decision Tree",
         "Random Forest", "K-Nearest Neighbors", "XGBoost",

@@ -88,7 +88,7 @@
     "colsample_bytree": "None",
     "device": "None",
     "early_stopping_rounds": "None",
-    "enable_categorical": "True",
+    "enable_categorical": "False",
     "eval_metric": "logloss",
     "feature_types": "None",
     "feature_weights": "None",
@@ -118,7 +118,6 @@
     "subsample": "None",
     "tree_method": "None",
     "validate_parameters": "None",
-    "verbosity": "None",
-    "use_label_encoder": "False"
+    "verbosity": "None"
   }
 }

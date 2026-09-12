@@ -1,6 +1,0 @@
-,Before Tuning,After Tuning
-Accuracy,0.8583,0.8599
-Precision,0.8165,0.8333
-Recall,0.3343,0.3343
-F1-score,0.4744,0.4772
-AUC-ROC,0.8703,0.8552
